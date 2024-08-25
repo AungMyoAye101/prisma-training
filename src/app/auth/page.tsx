@@ -1,7 +1,7 @@
 import React from "react";
 import LoginForm from "../components/LoginForm";
 
-const page = () => {
+const page = async () => {
   return (
     <section>
       <LoginForm />

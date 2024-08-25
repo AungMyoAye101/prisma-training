@@ -11,10 +11,13 @@ export default async function Home() {
       <Link href={"/auth"}>Login</Link>
       <div>Users</div>
       {users.map((user) => (
-        <div key={user.id}>
-          <h1>{user.name}</h1>
-          <p>{user.email}</p>
-        </div>
+        <ul key={user.id} className="max-w-2xl">
+          <li className="flex justify-between items-center p-4 gap-2">
+            <span>{user.name}</span>
+            <span>{user.email}</span>
+            <button className="bg-red-300 p-2 rounded">delete</button>
+          </li>
+        </ul>
       ))}
     </section>
   );

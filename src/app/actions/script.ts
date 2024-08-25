@@ -15,3 +15,13 @@ export const createUser = async (formData: FormData) => {
   console.log(user);
   redirect("/");
 };
+
+// delete users
+
+export const deleteUser = async (id: number) => {
+  console.log(id);
+  await db.user.delete({
+    where: { id },
+  });
+  redirect("/");
+};

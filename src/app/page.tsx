@@ -26,7 +26,7 @@ export default async function Home() {
               <span>{user.name}</span>
               <span>{user.email}</span>
               <Link
-                href={`/post/${user.id}`}
+                href={`/profile/${user.id}`}
                 className="bg-blue-400 py-1 px-4 rounded text-md"
               >
                 View

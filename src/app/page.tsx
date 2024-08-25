@@ -9,7 +9,10 @@ export default async function Home() {
 
   return (
     <section>
-      <Link href={"/auth"}>Login</Link>
+      <div className="flex gap-6">
+        <Link href={"/auth"}>Login</Link>
+        <Link href={"/post/new"}>Create post</Link>
+      </div>
       <div>Users</div>
       {users.map((user) => (
         <ul key={user.id} className="max-w-2xl">

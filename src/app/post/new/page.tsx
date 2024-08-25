@@ -1,9 +1,10 @@
+import { postCreate } from "@/app/actions/script";
 import React from "react";
 
 const PostCreate = () => {
   return (
     <form
-      action="/"
+      action={postCreate}
       className="flex flex-col gap-4 border border-gray-200 rounded shadow max-w-2xl p-4 mt-6"
     >
       <h1>Post create</h1>

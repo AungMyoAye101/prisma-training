@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { db } from "../db";
+import { revalidatePath } from "next/cache";
 
 export const createUser = async (formData: FormData) => {
   const name = formData.get("name") as string;
@@ -24,4 +25,27 @@ export const deleteUser = async (id: number) => {
     where: { id },
   });
   redirect("/");
+};
+
+// Post create
+
+export const postCreate = async (formData: FormData) => {
+  const user = await db.user.findFirst({
+    where: {
+      email: "aye@gmail.com",
+    },
+  });
+
+  await db.post.create({
+    data: {
+      title: formData.get("title") as string,
+      content: formData.get("content") as string,
+      author: {
+        connect: {
+          email: user?.email,
+        },
+      },
+    },
+  });
+  revalidatePath("/post");
 };

@@ -5,7 +5,7 @@ import { db } from "./db";
 import { deleteUser } from "./actions/script";
 
 export default async function Home() {
-  const users = await db.user.findMany();
+  const users = await db.post.findMany();
 
   return (
     <section className="flex flex-col gap-6 p-6">
@@ -23,10 +23,10 @@ export default async function Home() {
         {users.map((user) => (
           <ul key={user.id}>
             <li className="flex justify-between p-2 hover:bg-purple-500 rounded">
-              <span>{user.name}</span>
-              <span>{user.email}</span>
+              <span>{user.title}</span>
+              <span>{user.content}</span>
               <Link
-                href={`/profile/${user.id}`}
+                href={`/post/${user.id}`}
                 className="bg-blue-400 py-1 px-4 rounded text-md"
               >
                 View

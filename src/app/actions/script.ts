@@ -39,6 +39,7 @@ export const postCreate = async (formData: FormData) => {
     data: {
       title: formData.get("title") as string,
       content: formData.get("content") as string,
+      image: formData.get("image") as string,
       author: {
         connect: {
           email: user?.email,
@@ -59,4 +60,19 @@ export const UserInfo = async ({ params }: { params: { id: number } }) => {
       posts: true,
     },
   });
+};
+
+// post edit page
+
+export const EditPost = async ({ params }: { params: { id: number } }) => {
+  console.log(params.id);
+  // await db.post.update({
+  //   where: {
+  //     id: params.id,
+  //   },
+  //   data: {
+  //     title: "",
+  //     content: "",
+  //   },
+  // });
 };

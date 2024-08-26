@@ -59,6 +59,4 @@ export const UserInfo = async ({ params }: { params: { id: number } }) => {
       posts: true,
     },
   });
-
-  return user;
 };

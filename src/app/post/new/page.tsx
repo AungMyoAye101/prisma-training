@@ -20,6 +20,7 @@ const PostCreate = () => {
         name="content"
         className="p-2 border border-gray-100 rounded shadow"
       />
+      <input type="file" placeholder="Upload a image" />
       <button type="submit" className="bg-purple-400 p-2 rounded shadow-md">
         Create
       </button>

@@ -20,7 +20,6 @@ export const createUser = async (formData: FormData) => {
 // delete users
 
 export const deleteUser = async (id: number) => {
-  console.log(id);
   await db.user.delete({
     where: { id },
   });
@@ -48,4 +47,18 @@ export const postCreate = async (formData: FormData) => {
     },
   });
   revalidatePath("/post");
+};
+
+// user detail
+export const UserInfo = async ({ params }: { params: { id: number } }) => {
+  const user = await db.user.findFirst({
+    where: {
+      id: params.id,
+    },
+    include: {
+      posts: true,
+    },
+  });
+
+  return user;
 };

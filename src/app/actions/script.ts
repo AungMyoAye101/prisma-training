@@ -64,15 +64,14 @@ export const UserInfo = async ({ params }: { params: { id: number } }) => {
 
 // post edit page
 
-export const EditPost = async ({ params }: { params: { id: number } }) => {
-  console.log(params.id);
-  // await db.post.update({
-  //   where: {
-  //     id: params.id,
-  //   },
-  //   data: {
-  //     title: "",
-  //     content: "",
-  //   },
-  // });
+export const EditPost = async (formData: FormData, id: number) => {
+  await db.post.update({
+    where: {
+      id,
+    },
+    data: {
+      title: formData.get("title") as string,
+      content: formData.get("content") as string,
+    },
+  });
 };

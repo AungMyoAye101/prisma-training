@@ -1,6 +1,6 @@
 "use client";
 
-import { EditPost } from "@/app/actions/script";
+import { EditPost } from "@/actions/script";
 import React from "react";
 
 const PostEdit = ({ params }: { params: { id: number } }) => {

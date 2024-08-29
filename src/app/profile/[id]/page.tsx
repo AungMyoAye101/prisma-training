@@ -1,4 +1,4 @@
-import { db } from "@/app/db";
+import { db } from "@/db";
 import React from "react";
 
 const ProfilePage = async ({ params }: { params: { id: number } }) => {

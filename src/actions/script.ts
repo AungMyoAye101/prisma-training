@@ -23,6 +23,7 @@ export const deleteUser = async (id: number) => {
   await db.user.delete({
     where: { id },
   });
+  revalidatePath("/");
   redirect("/");
 };
 
@@ -74,4 +75,12 @@ export const EditPost = async (formData: FormData, id: number) => {
       content: formData.get("content") as string,
     },
   });
+};
+
+export const deletePost = async (id: number) => {
+  await db.post.delete({
+    where: { id },
+  });
+  revalidatePath("/");
+  redirect("/");
 };

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import LoginForm from "./components/LoginForm";
+import LoginForm from "../components/LoginForm";
 import Link from "next/link";
-import { db } from "./db";
-import { deleteUser } from "./actions/script";
+import { db } from "../db";
+import { deleteUser } from "../actions/script";
 
 export default async function Home() {
   const users = await db.post.findMany();

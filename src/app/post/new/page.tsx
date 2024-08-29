@@ -1,4 +1,4 @@
-import { postCreate } from "@/app/actions/script";
+import { postCreate } from "@/actions/script";
 import React from "react";
 
 const PostCreate = () => {
